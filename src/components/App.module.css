@@ -1,0 +1,33 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+}
+
+.navList{
+    display: flex;
+    gap: 20px;
+}
+
+.authList{
+    display: flex;
+    gap: 20px;
+}
+
+.navButton{
+    display: inline-flex;
+    list-style: none;
+
+    & a{
+        text-decoration: none;
+        border-radius: 6px;
+        padding: 8px;
+
+        color: white;
+        background-color: brown;
+
+        &:hover{
+            background-color: rgb(130, 25, 25);
+        }
+    }
+}

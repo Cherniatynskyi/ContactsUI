@@ -1,0 +1,39 @@
+.contactsContainer{
+    margin: 10px 0 0 20px;
+    width: 400px;
+}
+
+.contactsList{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    font-size: 20px;
+    justify-content: center;
+
+    padding-left: 10px;
+
+    &>li{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.contactsButton{
+    display: inline-flex;
+    margin-left: 10px;
+
+    background-color: rgb(253, 30, 30);
+    border: none;
+    color: white;
+    border-radius: 3px;
+    align-items: center;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    &:hover{
+        background-color: rgb(198, 16, 3);
+    }
+}

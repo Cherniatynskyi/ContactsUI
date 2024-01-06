@@ -1,0 +1,8 @@
+.filterLabel{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+
+    margin-left: 30px;
+    gap: 10px;
+}

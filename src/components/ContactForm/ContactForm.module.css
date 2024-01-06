@@ -1,0 +1,39 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 6px;
+    margin: 20px 0 0 20px;
+}
+
+.label{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input{
+    width: 80%;
+    margin-top: 6px;
+}
+
+.formButton{
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    margin-top: 14px;
+
+    background-color: rgb(30, 108, 253);
+    border: none;
+    color: white;
+    border-radius: 3px;
+
+    padding: 5px;
+    cursor: pointer;
+
+    &:hover {
+            background-color: rgb(0, 60, 255);
+        }
+}
