@@ -16,5 +16,5 @@ export const fetchCurrentUser = createAsyncThunk('auth/refresh', async(_, thunkA
         return
     }
     setToken(token)
-    console.log('Mount')
+    console.log('token set')
 })
