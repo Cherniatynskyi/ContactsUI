@@ -12,7 +12,7 @@ export const ContactsPage = () =>{
     const stateContacts = useSelector(state => state.contacts.contacts)
     const dispatch = useDispatch()
     useEffect(() => {
-    dispatch(getContactsThunk())
+      dispatch(getContactsThunk())
     }, [dispatch])
 
     return (

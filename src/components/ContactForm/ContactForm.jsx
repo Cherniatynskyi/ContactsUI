@@ -7,7 +7,7 @@ import { addContactsThunk } from '../../redux/operations';
 export const ContactForm = () => {
 
     const [name, setName] = useState('')
-    const [phone, setPhone] = useState('')
+    const [number, setNumber] = useState('')
 
     const stateContacts = useSelector(state => state.contacts.contacts)
     const isLoading = useSelector(state => state.contacts.isLoading)
@@ -19,8 +19,8 @@ export const ContactForm = () => {
             case 'name':
                 setName(e.target.value)
                 break;
-            case 'phone':
-                setPhone(e.target.value)
+            case 'number':
+                setNumber(e.target.value)
                 break;
             default:
                 console.log('error')
@@ -35,7 +35,7 @@ export const ContactForm = () => {
           }
           const contact = {
             name,
-            phone
+            number
           }
         dispatch(addContactsThunk(contact))
         resetForm()
@@ -54,7 +54,7 @@ export const ContactForm = () => {
 
     const resetForm = () => {
         setName('')
-        setPhone('')
+        setNumber('')
     }
 
         return(
@@ -67,7 +67,7 @@ export const ContactForm = () => {
             </label>
             <label className={css.label} htmlFor="tel">
                 Number
-                <input onChange={handleChange} value={phone} className={css.input} type="tel" name="phone" pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                <input onChange={handleChange} value={number} className={css.input} type="tel" name="number" pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +" required />
             </label>
             <button type='submit' className={css.formButton}>{isLoading? 'Adding...': 'Add Contact'}</button>

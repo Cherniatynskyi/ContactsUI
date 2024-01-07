@@ -4,9 +4,18 @@ import { HomePage } from "pages/HomePage";
 import { ContactsPage } from "pages/ContactsPage";
 import { LoginPage } from "pages/LoginPage";
 import { RegisterPage } from "pages/RegisterPage";
+import { fetchCurrentUser } from "../redux/auth/authThunk";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 
 const App = () => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchCurrentUser())
+  }, [dispatch])
+  
+
   
     return (
       <Routes>

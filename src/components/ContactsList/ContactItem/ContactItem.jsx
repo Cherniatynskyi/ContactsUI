@@ -5,10 +5,10 @@ import { deleteContactsThunk } from "../../../redux/operations";
 
 export const ContactItem = ({contact}) =>{
     const dispatch = useDispatch();
-    const {name, phone, id} = contact
+    const {name, number, id} = contact
 
     return (
-        <li>- {name}: {phone}
+        <li>- {name}: {number}
             <button className={css.contactsButton} onClick={()=>{dispatch(deleteContactsThunk(id))}}>Delete</button>
         </li>
     )
