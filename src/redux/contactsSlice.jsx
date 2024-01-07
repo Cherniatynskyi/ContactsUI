@@ -1,5 +1,5 @@
 import {createSlice, isAnyOf} from "@reduxjs/toolkit";
-import { addContactsThunk, getContactsThunk, deleteContactsThunk } from "./operations";
+import { addContactsThunk, getContactsThunk, deleteContactsThunk } from "./contactsThunk";
 
 const handlePending = (state) => {
     state.isLoading = true

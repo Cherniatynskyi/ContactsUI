@@ -31,8 +31,8 @@ export const Layout = () =>{
         <>
             <nav>
                 <ul className={css.navList}>
-                    <li className={css.navButton}><NavLink  to='/'>Home Page</NavLink></li>
-                    <li className={css.navButton}><NavLink to='/contacts'>Contacts</NavLink></li> 
+                    <li className={css.navButton}><NavLink  to='/'>Contacts<span className={css.logoSpan}>UI</span></NavLink></li>
+                    {isAuth && <li className={css.navButton}><NavLink to='/contacts'>Contacts</NavLink></li> }
                 </ul>
                 <div>
                     {profile &&
@@ -43,8 +43,8 @@ export const Layout = () =>{
                     }
                 </div>
                 {!profile && <ul className={css.authList}>
-                    <li className={css.navButton}><NavLink  to='/login'>Login</NavLink></li>
-                    <li className={css.navButton}><NavLink to='/register'>Sign in</NavLink></li> 
+                    <li className={css.navButton}><NavLink  to='/login'>Log In</NavLink></li>
+                    <li className={css.navButton}><NavLink to='/register'>Sign In</NavLink></li> 
                 </ul>}    
             </nav>
             <main>

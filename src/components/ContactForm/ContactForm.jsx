@@ -2,7 +2,7 @@ import { useState } from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import css from './ContactForm.module.css'
-import { addContactsThunk } from '../../redux/operations';
+import { addContactsThunk } from '../../redux/contactsThunk';
 
 export const ContactForm = () => {
 

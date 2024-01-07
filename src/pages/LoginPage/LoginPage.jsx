@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
 import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
-import { loginThunk } from "../redux/auth/authThunk"
+import { loginThunk } from "../../redux/auth/authThunk"
+import { NavLink } from "react-router-dom"
+import css from './LoginPage.module.css'
 
 export const LoginPage = () =>{
 
@@ -47,16 +49,20 @@ export const LoginPage = () =>{
     }
 
     return (
-        <form onSubmit={onSubmitForm}>
+        <div className={css.loginFormWrap}>
+            <h2>Log in</h2>
+            <form className={css.loginForm} onSubmit={onSubmitForm}>
             <label  htmlFor="name">
-                Email
-                <input onChange={handleChange} value={email}  type="email" name="email" required/>
+                <input className={css.validation} onChange={handleChange} placeholder="Email" value={email}  type="email" name="email" required/>
             </label>
             <label  htmlFor="tel">
-                Password
-                <input onChange={handleChange} value={password} type="password" name="password" required />
+                <input className={css.validation} onChange={handleChange} placeholder="Password" value={password} type="password" name="password" required />
             </label>
-            <button type='submit'>Log in</button>
+            <button className={css.loginButton} type='submit'>Log in</button>
         </form>
+            <div className={css.memberWrap}>
+             <p>Not a member? <NavLink  to='/register'>Create new Account</NavLink></p>
+            </div>
+        </div>
   )
 }

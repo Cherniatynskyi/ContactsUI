@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { signUp } from "services/auth"
 import {useNavigate} from 'react-router-dom'
 import { useSelector } from "react-redux"
+import css from '../LoginPage/LoginPage.module.css'
 
 export const RegisterPage = () =>{
 
@@ -56,20 +57,20 @@ export const RegisterPage = () =>{
     }
 
     return (
-        <form onSubmit={onSubmitForm}>
-            <label  htmlFor="name">
-                Name
-                <input onChange={handleChange} value={name}  type="text" name="name" required/>
-            </label>
-            <label  htmlFor="email">
-                Email
-                <input onChange={handleChange} value={email}  type="email" name="email" required/>
-            </label>
-            <label  htmlFor="password">
-                Password
-                <input onChange={handleChange} value={password} type="password" name="password" required />
-            </label>
-            <button type='submit'>Log in</button>
-        </form>
+        <div className={css.loginFormWrap}>
+            <h2>Sign in</h2>
+            <form className={css.loginForm} onSubmit={onSubmitForm}>
+                <label  htmlFor="name">
+                    <input className={css.validation} onChange={handleChange}  placeholder="Name" value={name}  type="text" name="name" required/>
+                </label>
+                <label  htmlFor="email">
+                    <input className={css.validation} onChange={handleChange}  placeholder="Email" value={email}  type="email" name="email" required/>
+                </label>
+                <label  htmlFor="password">
+                    <input className={css.validation} onChange={handleChange}  placeholder="Password" value={password} type="password" name="password" required />
+                </label>
+                <button  className={css.loginButton} type='submit'>Sign in</button>
+            </form>
+        </div>
   )
 }

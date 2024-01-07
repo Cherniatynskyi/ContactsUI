@@ -1,0 +1,41 @@
+.heroContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+
+    & h1{
+        font-size: 100px;
+    }
+
+    & img{
+        width: 400px;
+        position: absolute;
+        top: 15%;
+        left: 60%;
+        z-index: -1;
+        opacity: 0.7;
+
+    }
+}
+
+.heroButton{
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 90%;
+
+    & a{
+        color: white;
+        text-decoration: none;
+        font-size: 24px;
+        background-color: rgb(69, 69, 238);
+        padding: 20px 30px;
+        border-radius: 10px;
+
+        &:hover{
+            background-color: rgb(53, 53, 200);
+        }
+    }
+}

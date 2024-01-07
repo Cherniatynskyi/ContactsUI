@@ -19,15 +19,23 @@ nav{
     list-style: none;
 
     & a{
+        font-size: 24px;
+        font-weight: 700;
         text-decoration: none;
         border-radius: 6px;
         padding: 8px;
 
-        color: white;
-        background-color: brown;
+        color: black;
 
         &:hover{
-            background-color: rgb(130, 25, 25);
+            color: rgb(53, 53, 200);
+            & span{
+                color: rgb(53, 53, 200);
+            }
+        }
+
+        & span{
+            color: rgb(69, 69, 238);
         }
     }
 }
