@@ -16,7 +16,7 @@ export const fetchCurrentUser = createAsyncThunk('auth/refresh', async(_, thunkA
         return
     }
     setToken(token)
-    const response = await getProfile()
-    console.log(response)
-    return response
+    const data = await getProfile()
+    console.log(data)
+    return data
 })

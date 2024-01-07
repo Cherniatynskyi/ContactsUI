@@ -1,4 +1,4 @@
-import { getProfileThunk, loginThunk } from "./authThunk";
+import { fetchCurrentUser, getProfileThunk, loginThunk } from "./authThunk";
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -24,6 +24,10 @@ const handleFulfilledProfile = (state, {payload}) =>{
     state.profile = payload
 }
 
+const handleFulfilledFetchCurrentUser = (state, {payload}) =>{
+    state.profile = payload
+}
+
 const handleRejected = (state, {payload}) =>{
     state.isLoading = false
     state.error = payload
@@ -42,6 +46,7 @@ export const authSlice = createSlice({
         builder
         .addCase(loginThunk.fulfilled, handleFulfilledLogin)
         .addCase(getProfileThunk.fulfilled, handleFulfilledProfile)
+        .addCase(fetchCurrentUser.fulfilled, handleFulfilledFetchCurrentUser)
         .addMatcher(isAnyOf(loginThunk.pending, getProfileThunk.pending), handlePending)
         .addMatcher(isAnyOf(loginThunk.rejected, getProfileThunk.rejected), handleRejected)
     }
