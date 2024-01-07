@@ -10,10 +10,13 @@ import { getContactsThunk } from "../../redux/contactsThunk"
 export const ContactsPage = () =>{
 
     const stateContacts = useSelector(state => state.contacts.contacts)
+    const isRefreshed = useSelector(state => state.auth_token.profile)
     const dispatch = useDispatch()
     useEffect(() => {
-      dispatch(getContactsThunk())
-    }, [dispatch])
+      if(isRefreshed){
+        dispatch(getContactsThunk())
+      }  
+    }, [dispatch, isRefreshed])
 
     return (
          <>
