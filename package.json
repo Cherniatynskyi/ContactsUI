@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-08-phonebook",
+  "name": "contactsui",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Cherniatynskyi.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://Cherniatynskyi.github.io/ContactsUI/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "@testing-library/jest-dom": "^5.17.0",
