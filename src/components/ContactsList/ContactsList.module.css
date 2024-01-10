@@ -1,32 +1,68 @@
 .contactsContainer{
-    margin: 10px 0 0 20px;
-    width: 400px;
+    width: 50%;
 }
 
 .contactsList{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
 
-    font-size: 20px;
     justify-content: center;
+    padding: 0;
+    margin: 0;
+}
 
-    padding-left: 10px;
+.listItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    &>li{
+    height: 70px;
+    padding: 0 20px;
+
+    border-radius: 10px;
+    border: 0.5px solid rgba(137, 137, 137, 0.43);
+
+    cursor: pointer;
+
+    &:hover, &:focus{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+
+    & p{
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    & span{
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    & div{
         display: flex;
-        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+        background-color: blue;
+        border-radius: 50%;
+        color: white;
+        width: 40px;
+        height: 40px;
     }
 }
 
 .contactsButton{
     display: inline-flex;
-    margin-left: 10px;
-
-    background-color: rgb(253, 30, 30);
+    padding: 5px 10px;
     border: none;
     color: white;
-    border-radius: 3px;
+
+    border-radius: 5px;
+
     align-items: center;
 
     cursor: pointer;
@@ -35,5 +71,9 @@
 
     &:hover{
         background-color: rgb(198, 16, 3);
+
+        svg{
+            fill: white;
+        }
     }
 }

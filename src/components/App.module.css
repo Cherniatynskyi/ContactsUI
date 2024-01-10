@@ -1,10 +1,12 @@
 nav{
     display: flex;
     justify-content: space-between;
-    padding: 10px 40px;
+    align-items: center;
+    padding: 10px 80px;
 }
 
 .navList{
+    padding: 0;
     display: flex;
     gap: 20px;
 }
@@ -19,7 +21,7 @@ nav{
     list-style: none;
 
     & a{
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 700;
         text-decoration: none;
         border-radius: 6px;

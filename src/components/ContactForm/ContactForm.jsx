@@ -4,7 +4,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import css from './ContactForm.module.css'
 import { addContactsThunk } from '../../redux/contactsThunk';
 
-export const ContactForm = () => {
+export const ContactForm = ({closeModal}) => {
 
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
@@ -39,6 +39,7 @@ export const ContactForm = () => {
           }
         dispatch(addContactsThunk(contact))
         resetForm()
+        closeModal()
     }
 
     const checkExistHandler = name => {

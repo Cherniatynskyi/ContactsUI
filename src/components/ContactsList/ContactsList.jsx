@@ -7,7 +7,7 @@ import { ContactItem } from './ContactItem/ContactItem';
 
 export const ContactsList = () => {
     const stateContacts = useSelector(state => state.contacts.contacts)
-    const isLoading = useSelector(state => state.contacts.isLoading)
+    // const isLoading = useSelector(state => state.contacts.isLoading)
     const stateFilter = useSelector(state => state.filter.filter)
 
     const getFilteredContacts = () => {
@@ -21,7 +21,6 @@ export const ContactsList = () => {
 
     return (
         <>
-            {isLoading && <h2>Loading...</h2>}
             <div className={css.contactsContainer}>
                 <ul className={css.contactsList}>
                     {filteredContacts && filteredContacts.map((contact) =>

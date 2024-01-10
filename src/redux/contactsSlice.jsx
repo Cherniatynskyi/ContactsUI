@@ -34,11 +34,18 @@ export const contactsSlice = createSlice({
     initialState: {
         contacts:[],
         isLoading: false,
-        error: ''
+        error: '',
+        currentContactId: null
     },
     reducers:{
         clearContacts(state){
             state.contacts = []
+        },
+        setCurrentContactId(state, {payload}){
+            state.currentContactId = payload
+        },
+        clearCurrentContact(state){
+            state.currentContactId = null
         }
     },
     extraReducers:(builder)=>{
@@ -51,4 +58,4 @@ export const contactsSlice = createSlice({
     }
 })
 
-export const {clearContacts} = contactsSlice.actions
+export const {clearContacts, setCurrentContactId, clearCurrentContact} = contactsSlice.actions

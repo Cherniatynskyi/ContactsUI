@@ -1,0 +1,102 @@
+.selectedContainer{
+    position: sticky;
+    top: 30px;
+    right: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 40%;
+    height: 300px;
+    padding: 30px;
+
+    border-radius: 18px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.profileImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(130, 130, 130);
+    border-radius: 50%;
+    color: white;
+    width: 100px;
+    height: 100px;
+    font-size: 26px;
+}
+
+.infoList{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+
+    width: 100%;
+
+    gap: 60px;
+    margin-top: 20px;
+}
+
+.infoListItem{
+    & p{
+        margin: 0;
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+
+    & span{
+        font-size: 25px;
+    }
+}
+
+.selectedButtonsContainer{
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    margin-top: 30px;
+
+    justify-content: center;
+     & button{
+        width: 33%;
+        padding: 8px 10px;
+        font-size: 16px;
+        color: white;
+        border: none;
+        border-radius: 10px;
+
+        cursor: pointer;
+     }
+
+}
+
+
+.deleteButton{
+    background-color: rgb(248, 36, 36);
+
+    &:hover{
+        background-color: rgb(202, 30, 30);
+    }
+}
+
+.telLink{
+    text-decoration: none;
+    text-align: center;
+    width: 33%;
+    padding: 8px 10px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background-color: rgb(12, 184, 12);
+
+
+    &:hover{
+        background-color: rgb(11, 160, 11);
+    }
+}

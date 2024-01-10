@@ -1,5 +1,6 @@
 import {useSelector, useDispatch} from 'react-redux'
 import { setFilter } from "../../redux/filterSlice";
+import { CiSearch } from "react-icons/ci";
 import css from './Filter.module.css'
 
 export const Filter = () => {
@@ -12,7 +13,7 @@ export const Filter = () => {
       }
 
     return (<label className={css.filterLabel}>
-        Filter
         <input className={css.filterInput} type="text" value={stateFilter} onChange={changeFilter} />
+        <CiSearch size="1.5em" fill="rgb(77, 77, 77)"/>
     </label>)
 }

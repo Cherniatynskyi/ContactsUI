@@ -7,6 +7,7 @@ import { getProfileThunk } from "../redux/auth/authThunk";
 import { logOut } from "../redux/auth/authSlice";
 import {deleteToken} from '../services/auth'
 import { clearContacts } from "../redux/contactsSlice";
+import { Profile } from "./Profile/Profile";
 
 export const Layout = () =>{
     const profile = useSelector(state => state.auth_token.profile)
@@ -35,11 +36,11 @@ export const Layout = () =>{
                     {isAuth && <li className={css.navButton}><NavLink to='/contacts'>Contacts</NavLink></li> }
                 </ul>
                 <div>
-                    {profile &&
-                     <div>
-                        <p>{profile.name}</p>
-                        <button onClick={handleLogout}>Log out</button>
-                    </div>
+                    {profile && <Profile profile={profile} logout={handleLogout}/>
+                    //  <div>
+                    //     <p>{profile.name}</p>
+                    //     <button onClick={handleLogout}>Log out</button>
+                    // </div>
                     }
                 </div>
                 {!profile && <ul className={css.authList}>
