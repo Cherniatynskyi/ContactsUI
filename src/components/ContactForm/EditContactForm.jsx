@@ -31,7 +31,7 @@ export const EditContactForm = ({onClose, id}) => {
 
     const onSubmitForm = e => {
         if(name === currentContact.name & number === currentContact.number){
-            Notify.failure("You haven't change anything");
+            Notify.failure("You haven't changed anything");
         }
         e.preventDefault()
           const updatedContact = {
