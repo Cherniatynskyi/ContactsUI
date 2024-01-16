@@ -12,3 +12,7 @@ export const addContact = async ({name, number}) => {
 export const deleteContact = async (id) => {
     return await instance.delete(`/contacts/${id}`)
 }
+
+export const updateContact = async(id, body)=>{
+   return await instance.patch(`/contacts/${id}`, body)
+}

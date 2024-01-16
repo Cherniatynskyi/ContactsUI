@@ -9,7 +9,6 @@ export const ContactsList = () => {
     const stateContacts = useSelector(state => state.contacts.contacts)
     // const isLoading = useSelector(state => state.contacts.isLoading)
     const stateFilter = useSelector(state => state.filter.filter)
-
     const getFilteredContacts = () => {
         const normalizedFilter = stateFilter.toLowerCase()
         if(stateContacts){

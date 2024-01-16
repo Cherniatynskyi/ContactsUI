@@ -13,7 +13,6 @@ export const ContactsPage = () =>{
     const [modalIsOpen, setModalIsOpen] = useState(false)
 
     const stateContacts = useSelector(state => state.contacts.contacts)
-    const currentId = useSelector(state => state.contacts.currentContactId)
     const isRefreshed = useSelector(state => state.auth_token.profile)
     const dispatch = useDispatch()
 
@@ -37,12 +36,11 @@ export const ContactsPage = () =>{
           <div className={css.header}>
           <Filter/>
             <div onClick={openModal}><span>+</span>New Contact</div>
-            
           </div>
           {modalIsOpen && <AddContactModal onClose={closeModal}/>}
           <div className={css.contactsMainPage}>
             {stateContacts?.length > 0 ? <ContactsList/> : <h3>You have no contacts in your list yet</h3>}
-            {currentId ? <SelectedContact/> : <div>DEFAULT</div>}
+            {stateContacts[0] && <SelectedContact/>}
           </div>
             </> 
     )

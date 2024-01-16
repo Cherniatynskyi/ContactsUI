@@ -8,7 +8,6 @@ export const Profile = ({profile, logout}) =>{
 
     const handleClick = ()=>{
         setmodalIsOpen(prevState => !prevState)
-        console.log(modalIsOpen)
     }
 
     return (
