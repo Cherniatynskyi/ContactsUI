@@ -81,6 +81,14 @@
     }
 }
 
+.editButton{
+    background-color: rgb(130, 130, 130);
+
+    &:hover{
+        background-color: rgb(103, 102, 102);
+    }
+}
+
 .telLink{
     text-decoration: none;
     text-align: center;

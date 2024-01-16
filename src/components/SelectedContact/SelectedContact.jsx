@@ -21,7 +21,7 @@ export const SelectedContact = () =>{
     }
 
     const handleUpdate = () =>{
-        const updatedContact = {name: 'Xexox', number:"346365"}
+        const updatedContact = { name: "Abc", number:"123-345"}
         dispatch(updateContactThunk(id, updatedContact))
     }
 
@@ -41,8 +41,8 @@ export const SelectedContact = () =>{
                 </ul>
                 <div className={css.selectedButtonsContainer}>
                     <a className={css.telLink} href={`tel:${number}`}>call</a>
+                    <button className={css.editButton} onClick={handleUpdate}>update</button>
                     <button className={css.deleteButton} onClick={handleDelete}>delete</button>
-                    <button className={css.deleteButton} onClick={handleUpdate}>update</button>
                 </div>
             </div>
     )

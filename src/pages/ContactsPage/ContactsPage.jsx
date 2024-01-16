@@ -6,15 +6,22 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import { getContactsThunk } from "../../redux/contactsThunk"
+import getRandomColor from "../../utils/randomColor"
 import css from './ContactsPage.module.css'
+
 
 
 export const ContactsPage = () =>{
     const [modalIsOpen, setModalIsOpen] = useState(false)
-
     const stateContacts = useSelector(state => state.contacts.contacts)
     const isRefreshed = useSelector(state => state.auth_token.profile)
     const dispatch = useDispatch()
+    const contactsIds = stateContacts.map(contact => contact.id)
+    const colors = {}
+    for (let index = 0; index < contactsIds.length; index++) {
+      colors[contactsIds[index]] = getRandomColor()
+    }
+      
 
     useEffect(() => {
       if(isRefreshed){
@@ -24,7 +31,6 @@ export const ContactsPage = () =>{
 
     const openModal = () =>{
       setModalIsOpen(true)
-      console.log(stateContacts)
     }
 
     const closeModal = () => {
@@ -34,13 +40,16 @@ export const ContactsPage = () =>{
     return (
          <>
           <div className={css.header}>
-          <Filter/>
             <div onClick={openModal}><span>+</span>New Contact</div>
+            <h2>All Contacts: {stateContacts.length}</h2>
           </div>
           {modalIsOpen && <AddContactModal onClose={closeModal}/>}
           <div className={css.contactsMainPage}>
-            {stateContacts?.length > 0 ? <ContactsList/> : <h3>You have no contacts in your list yet</h3>}
             {stateContacts[0] && <SelectedContact/>}
+            <div className={css.contactsListContainer}>
+              <Filter/>
+              {stateContacts?.length > 0 ? <ContactsList colors={colors}/> : <h3>You have no contacts in your list yet</h3>}
+            </div>
           </div>
             </> 
     )

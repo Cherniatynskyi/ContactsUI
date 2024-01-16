@@ -1,5 +1,5 @@
 .contactsContainer{
-    width: 50%;
+    width: 100%;
 }
 
 .contactsList{
@@ -26,7 +26,7 @@
     cursor: pointer;
 
     &:hover, &:focus{
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 
     & p{
@@ -76,4 +76,11 @@
             fill: white;
         }
     }
+}
+
+.active{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 2px solid rgb(114, 146, 252);
+    outline: none;
+
 }

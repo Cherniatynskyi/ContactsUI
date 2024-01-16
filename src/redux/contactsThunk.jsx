@@ -15,7 +15,7 @@ export const deleteContactsThunk = createAsyncThunk('contacts/deleteContact', as
     return contacts.data
 })
 
-export const updateContactThunk = createAsyncThunk('contacts/updateContact', async(id, data)=>{
-    const contacts = await updateContact(id, data)
+export const updateContactThunk = createAsyncThunk('contacts/updateContact', async(id, body)=>{
+    const contacts = await updateContact(id, body)
     return contacts.data
 })

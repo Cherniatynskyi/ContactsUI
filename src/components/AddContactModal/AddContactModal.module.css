@@ -11,9 +11,26 @@
 }
 
 .Modal {
+    position: relative;
     max-width: 80%;
     height: 140px;
-    margin-top: 5%;
+    margin-top: 10%;
     display: flex;
     justify-content: center;
+
+    & .closeButton{
+        position: absolute;
+        right: 8px;
+        top: 10px;
+
+        cursor: pointer;
+        background-color: inherit;
+        border: none;
+
+        &:hover, &:focus{
+            .closeIcon{
+                fill: black;
+            }
+        }
+    }
 }

@@ -13,7 +13,7 @@ export const Filter = () => {
       }
 
     return (<label className={css.filterLabel}>
-        <input className={css.filterInput} type="text" value={stateFilter} onChange={changeFilter} />
         <CiSearch size="1.5em" fill="rgb(77, 77, 77)"/>
+        <input className={css.filterInput} type="text" value={stateFilter} onChange={changeFilter} />
     </label>)
 }
