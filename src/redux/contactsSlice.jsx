@@ -25,7 +25,12 @@ const handleFulfilledDel = (state,{payload}) => {
 
 const handleFulfilledUpdate = (state,{payload}) => {
     state.isLoading = false
-    console.log(payload)
+    state.contacts = state.contacts.map(contact => {
+        if(contact.id === payload.id){
+            return payload
+        }
+        return contact
+    })
     state.error = ''
 }
 

@@ -13,7 +13,7 @@ export const deleteContact = async (id) => {
     return await instance.delete(`/contacts/${id}`)
 }
 
-export const updateContact = async(id, {name, number})=>{
-   return await instance.patch(`/contacts/${id}`, {name, number})
+export const updateContact = async(id, data)=>{
+   return await instance.patch(`/contacts/${id}`, data)
 }
 

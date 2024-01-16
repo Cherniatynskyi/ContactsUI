@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react'
 import css from './AddContactModal.module.css'
-import { ContactForm } from 'components/ContactForm/ContactForm'
+import { AddContactForm } from 'components/ContactForm/AddContactForm'
 import { IoMdClose } from "react-icons/io";
+import { EditContactForm } from 'components/ContactForm/EditContactForm';
 
-export const AddContactModal = ({contact, onClose}) => {
+export const AddContactModal = ({ onClose, contentType= "edit", id}) => {
 
     const firstRender = useRef(false)
 
@@ -37,7 +38,7 @@ export const AddContactModal = ({contact, onClose}) => {
         return (
             <div className={css.Overlay} onClick={handleBackdropClick}>
                 <div className={css.Modal}>
-                <ContactForm closeModal={onClose}/>
+                {contentType === 'add' ? <AddContactForm closeModal={onClose}/> : <EditContactForm onClose={onClose} id={id}/>}
                 <button onClick={handleButtonClose} className={css.closeButton}><IoMdClose className={css.closeIcon} fill="grey" size="1.75em"/></button>
                 </div>
             </div>

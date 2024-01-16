@@ -1,6 +1,6 @@
 import { Filter } from "components/Filter/Filter"
 import { SelectedContact } from "components/SelectedContact/SelectedContact"
-import { AddContactModal } from "components/AddContactModal/AddContactModal"
+import { AddContactModal } from "components/ContactModals/AddContactModal"
 import { ContactsList } from "components/ContactsList/ContactsList"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
@@ -12,7 +12,8 @@ import css from './ContactsPage.module.css'
 
 
 export const ContactsPage = () =>{
-    const [modalIsOpen, setModalIsOpen] = useState(false)
+    const [AddmodalIsOpen, setAddModalIsOpen] = useState(false)
+    const [EditmodalIsOpen, setEditModalIsOpen] = useState(false)
     const stateContacts = useSelector(state => state.contacts.contacts)
     const isRefreshed = useSelector(state => state.auth_token.profile)
     const dispatch = useDispatch()
@@ -29,23 +30,31 @@ export const ContactsPage = () =>{
       }  
     }, [dispatch, isRefreshed])
 
-    const openModal = () =>{
-      setModalIsOpen(true)
+    const openAddModal = () =>{
+      setAddModalIsOpen(true)
     }
 
-    const closeModal = () => {
-      setModalIsOpen(false)
+    const closeAddModal = () => {
+      setAddModalIsOpen(false)
+   }
+
+   const openEditModal = ()=>{
+      setEditModalIsOpen(true)
+   }
+
+   const closeEditModal = ()=>{
+    setEditModalIsOpen(false)
    }
 
     return (
          <>
           <div className={css.header}>
-            <div onClick={openModal}><span>+</span>New Contact</div>
+            <div onClick={openAddModal}><span>+</span>New Contact</div>
             <h2>All Contacts: {stateContacts.length}</h2>
           </div>
-          {modalIsOpen && <AddContactModal onClose={closeModal}/>}
+          {AddmodalIsOpen && <AddContactModal onClose={closeAddModal} contentType="add"/>}
           <div className={css.contactsMainPage}>
-            {stateContacts[0] && <SelectedContact/>}
+            {stateContacts[0] && <SelectedContact onOpen={openEditModal} onClose={closeEditModal} isOpen={EditmodalIsOpen}/>}
             <div className={css.contactsListContainer}>
               <Filter/>
               {stateContacts?.length > 0 ? <ContactsList colors={colors}/> : <h3>You have no contacts in your list yet</h3>}
