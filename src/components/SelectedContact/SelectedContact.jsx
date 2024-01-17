@@ -1,29 +1,17 @@
 import css from './SelectedContacts.module.css'
 import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
-import { deleteContactsThunk} from '../../redux/contactsThunk'
-import { clearCurrentContact } from '../../redux/contactsSlice'
-import { AddContactModal } from 'components/ContactModals/AddContactModal'
+import { ContactModal } from 'components/ContactModals/ContactModal'
+import { ConfirmDeleteModal } from 'components/ContactModals/ConfirmDeleteModal'
 
-export const SelectedContact = ({onOpen, onClose, isOpen}) =>{
+export const SelectedContact = ({openConfirmModal, openEditModal, closeConfirmModal, closeEditModal, editmodalIsOpen, confirmModalIsOpen}) =>{
+    
 
-    const dispatch = useDispatch()
     const stateContacts = useSelector(state => state.contacts.contacts)
     const currentId = useSelector(state => state.contacts.currentContactId)
 
 
     const currentContact = stateContacts.find(contact => contact.id === currentId)
     const {name, number, id} = currentContact || stateContacts[0]
-    
-
-    const handleDelete =()=>{
-        dispatch(deleteContactsThunk(id))
-        dispatch(clearCurrentContact())
-    }
-
-    const handleUpdate = () =>{
-        onOpen()
-    }
 
 
     return(
@@ -41,10 +29,11 @@ export const SelectedContact = ({onOpen, onClose, isOpen}) =>{
                 </ul>
                 <div className={css.selectedButtonsContainer}>
                     <a className={css.telLink} href={`tel:${number}`}>call</a>
-                    <button className={css.editButton} onClick={handleUpdate}>edit</button>
-                    <button className={css.deleteButton} onClick={handleDelete}>delete</button>
+                    <button className={css.editButton} onClick={openEditModal}>edit</button>
+                    <button className={css.deleteButton} onClick={openConfirmModal}>delete</button>
                 </div>
-                {isOpen && <AddContactModal onClose={onClose} id={id}/>}
+                {editmodalIsOpen && <ContactModal onClose={closeEditModal} id={id}/>}
+                {confirmModalIsOpen && <ConfirmDeleteModal name={name} onClose={closeConfirmModal} id={id}/>}
             </div>
     )
 }

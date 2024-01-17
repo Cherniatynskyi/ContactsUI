@@ -40,6 +40,7 @@ export const AddContactForm = ({closeModal}) => {
         dispatch(addContactsThunk(contact))
         resetForm()
         closeModal()
+        Notify.success(`Contact ${name} has been added`);
     }
 
     const checkExistHandler = name => {

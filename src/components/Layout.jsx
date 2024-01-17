@@ -1,5 +1,5 @@
 import { Suspense, useEffect } from "react";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import css from './App.module.css'
 import { useDispatch } from "react-redux";
@@ -14,12 +14,15 @@ export const Layout = () =>{
     const isAuth = useSelector(state=>state.auth_token.access_token)
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const location = useLocation()
+    const isOnContactsPage = location.pathname === '/contacts'
 
     useEffect(() => {
       if(isAuth){
         dispatch(getProfileThunk())
+        console.log(location)
       }
-    }, [dispatch, isAuth])
+    }, [dispatch, isAuth, location])
 
     const handleLogout = () =>{
         dispatch(logOut())
@@ -33,14 +36,10 @@ export const Layout = () =>{
             <nav>
                 <ul className={css.navList}>
                     <li className={css.navButton}><NavLink  to='/'>Contacts<span className={css.logoSpan}>UI</span></NavLink></li>
-                    {isAuth && <li className={css.navButton}><NavLink to='/contacts'>Contacts</NavLink></li> }
+                    {isAuth && <li className={`${css.navButton} ${isOnContactsPage && css.isActive}`}><NavLink to='/contacts'>Contacts</NavLink></li> }
                 </ul>
                 <div>
                     {profile && <Profile profile={profile} logout={handleLogout}/>
-                    //  <div>
-                    //     <p>{profile.name}</p>
-                    //     <button onClick={handleLogout}>Log out</button>
-                    // </div>
                     }
                 </div>
                 {!profile && <ul className={css.authList}>
@@ -49,7 +48,7 @@ export const Layout = () =>{
                 </ul>}    
             </nav>
             <main>
-                <Suspense fallback={<div>Loading.....</div>}>
+                <Suspense fallback={<div></div>}>
                     <Outlet/>
                 </Suspense>
             </main>

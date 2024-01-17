@@ -1,14 +1,12 @@
 import css from '../ContactsList.module.css'
 import { useDispatch} from "react-redux";
-import { deleteContactsThunk } from "../../../redux/contactsThunk";
 import { MdDeleteForever } from "react-icons/md";
 import { setCurrentContactId } from '../../../redux/contactsSlice';
-import { clearCurrentContact } from '../../../redux/contactsSlice';
 import { useSelector } from 'react-redux';
 
 
 
-export const ContactItem = ({contact, colors}) =>{
+export const ContactItem = ({contact, colors, openConfirmModal, closeConfirmmodal}) =>{
     const dispatch = useDispatch();
     const {name, number, id} = contact
     const currentId = useSelector(state => state.contacts.currentContactId)
@@ -20,18 +18,11 @@ export const ContactItem = ({contact, colors}) =>{
     }
     
 
-    const onSetCurrentContact =(e)=>{
-        const check = e.target.nodeName
-        if(check === "svg" | check === "BUTTON" | check === "path"){
-            return
-        }
+    const onSetCurrentContact =()=>{
         dispatch(setCurrentContactId(id))
     }
 
-    const handleDelete =()=>{
-        dispatch(deleteContactsThunk(id))
-        dispatch(clearCurrentContact())
-    }
+
 
 
     return (
@@ -39,7 +30,7 @@ export const ContactItem = ({contact, colors}) =>{
             <div style={{backgroundColor: `${colors[id]}`}}>{name[0].toUpperCase()}</div>
             <p>{name}</p>
             <span>{number}</span>
-            <button className={css.contactsButton} onClick={handleDelete}><MdDeleteForever fill="black" size="2em"/></button>
+            <button className={css.contactsButton} onClick={openConfirmModal}><MdDeleteForever fill="black" size="2em"/></button>
         </li>
     )
 }

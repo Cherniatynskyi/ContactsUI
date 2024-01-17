@@ -65,8 +65,8 @@ export const contactsSlice = createSlice({
         .addCase(addContactsThunk.fulfilled, handleFulfilledAdd)
         .addCase(deleteContactsThunk.fulfilled, handleFulfilledDel)
         .addCase(updateContactThunk.fulfilled, handleFulfilledUpdate)
-        .addMatcher(isAnyOf(getContactsThunk.pending, addContactsThunk.pending, deleteContactsThunk.pending), handlePending)
-        .addMatcher(isAnyOf(getContactsThunk.rejected, addContactsThunk.rejected, deleteContactsThunk.rejected), handleRejected)
+        .addMatcher(isAnyOf(getContactsThunk.pending, addContactsThunk.pending, deleteContactsThunk.pending, updateContactThunk.pending), handlePending)
+        .addMatcher(isAnyOf(getContactsThunk.rejected, addContactsThunk.rejected, deleteContactsThunk.rejected, updateContactThunk.rejected), handleRejected)
     }
 })
 

@@ -16,7 +16,6 @@ export const signUp = (body) =>{
 
 export const logIn = async(body) =>{
     const {data} = await instance.post('/users/login', body)
-    console.log(data)
     setToken(`Bearer ${data.token}`)
     return data
  }

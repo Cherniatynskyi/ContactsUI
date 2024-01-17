@@ -4,7 +4,7 @@ import { AddContactForm } from 'components/ContactForm/AddContactForm'
 import { IoMdClose } from "react-icons/io";
 import { EditContactForm } from 'components/ContactForm/EditContactForm';
 
-export const AddContactModal = ({ onClose, contentType= "edit", id}) => {
+export const ContactModal = ({ onClose, contentType= "edit", id}) => {
 
     const firstRender = useRef(false)
 

@@ -30,10 +30,11 @@ export const EditContactForm = ({onClose, id}) => {
     }
 
     const onSubmitForm = e => {
+        e.preventDefault()
         if(name === currentContact.name & number === currentContact.number){
             Notify.failure("You haven't changed anything");
+            return
         }
-        e.preventDefault()
           const updatedContact = {
             id,
             name,
@@ -42,6 +43,7 @@ export const EditContactForm = ({onClose, id}) => {
           dispatch(updateContactThunk(updatedContact))
         resetForm()
         onClose()
+        Notify.success(`Coontact ${name} has been edited`);
     }
 
 

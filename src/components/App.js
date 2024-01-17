@@ -9,16 +9,13 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { RestrictedRoute } from "./Routes/RestrictedRoute";
 import { PrivateRoute } from "./Routes/PrivateRoute";
-// import { useSelector } from "react-redux";
 
 
 
 const App = () => {
-  // const isAuth = useSelector(state=>state.auth_token.access_token)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log('Mount')
     dispatch(fetchCurrentUser())
   }, [dispatch])
   
