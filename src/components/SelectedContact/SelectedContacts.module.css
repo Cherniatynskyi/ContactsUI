@@ -14,6 +14,15 @@
 
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    @media (max-width: 1200px) {
+        height: 400px;
+        right: 0;
+    }
+    @media (max-width: 880px) {
+        height: 400px;
+        padding: 20px;
+    }
 }
 
 .profileImg{
@@ -39,6 +48,11 @@
 
     gap: 60px;
     margin-top: 20px;
+
+    @media (max-width: 1200px) {
+        flex-direction: column;
+        gap: 30px;
+    }
 }
 
 .infoListItem{
@@ -71,6 +85,10 @@
 
         cursor: pointer;
      }
+
+     @media (max-width: 1200px) {
+        gap: 15px;
+    }
 
 }
 
@@ -115,4 +133,9 @@
     position: absolute;
     top: 70%;
     z-index: -10;
+
+    @media (max-width: 950px) {
+        width: 400px;
+        top: 75%;
+    }
 }

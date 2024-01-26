@@ -51,7 +51,7 @@ export const LoginPage = () =>{
     return (
         <div className={css.loginFormWrap}>
             <h2>Log in</h2>
-            <form className={css.loginForm} onSubmit={onSubmitForm}>
+        <form className={css.loginForm} onSubmit={onSubmitForm}>
             <label  htmlFor="name">
                 <input className={css.validation} onChange={handleChange} placeholder="Email" value={email}  type="email" name="email" required/>
             </label>

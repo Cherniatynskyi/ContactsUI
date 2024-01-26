@@ -1,6 +1,10 @@
 .contacts{
     width: 100%;
     padding: 0 6% 40px 6%;
+
+    @media (max-width: 1200px) {
+        padding: 0 2% 40px 2%;
+    }
 }
 
 .header{

@@ -9,6 +9,10 @@
     border-radius: 4px;
 
     gap: 20px;
+
+    @media (max-width: 720px) {
+        padding: 40px;
+    }
 }
 
 .label{
