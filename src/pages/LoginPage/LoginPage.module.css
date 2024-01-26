@@ -1,6 +1,5 @@
 .loginFormWrap{
     background-color: white;
-    width: 35%;
     margin: 60px auto;
     text-align: center;
     padding: 20px 0 0 0;
@@ -96,7 +95,6 @@
 .loginButton{
     border: none;
     padding: 0;
-    top: 90%;
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -105,12 +103,12 @@
     text-decoration: none;
     font-size: 16px;
     font-weight: lighter;
-    background-color: rgb(69, 69, 238);
-    padding: 8px 12px;
+    background-color: rgb(132, 85, 246);
+    padding: 12px 20px;
     border-radius: 6px;
 
      
         &:hover{
-            background-color: rgb(53, 53, 200);
+            background-color: rgb(110, 58, 232);
         }
 }

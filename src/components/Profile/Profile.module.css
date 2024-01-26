@@ -4,7 +4,7 @@
     justify-content: center;
     width: 14px;
     height: 14px;
-    background-color: rgb(69, 69, 238);
+    background-color: rgb(132, 85, 246);
     border-radius: 50%;
     color: white;
     padding: 20px;
@@ -14,7 +14,7 @@
 
 
     &:hover, &:focus{
-        background-color: rgb(53, 53, 200);
+        background-color: rgb(110, 58, 232);
     }
 }
 
@@ -56,7 +56,7 @@
     border-radius: 50%;
 
     &:hover, &:focus{
-        color: rgb(53, 53, 200);
+        color: rgb(110, 58, 232)
     }
 }
 
@@ -81,7 +81,7 @@
     background-color: lightgray;
     border: none;
     padding: 5px 10px;
-    border-radius: 10px;
+    border-radius: 4px;
 
     cursor: pointer;
 

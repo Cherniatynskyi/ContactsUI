@@ -1,46 +1,22 @@
+.contacts{
+    width: 100%;
+    padding: 0 6% 40px 6%;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 8% 20px 8%;
+    padding: 50px 0% 20px 0%;
 
     border-top: 0.5px solid grey;
 
-    & h2{
-        margin: 0;
-        margin-left: 10%;
-    }
-
-    & .addButton{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(12, 184, 12);
-        color: white;
-        border-radius: 6px;
-        font-size: 20px;
-        padding: 8px 16px;
-
-        cursor: pointer;
-
-        &:hover, &:focus{
-            background-color: rgb(11, 160, 11);
-        }
-
-        & span{
-            display: block;
-            margin-top: -3px;
-            margin-right: 4px;
-        }
-
-    }
 
 }
 
 .contactsMainPage{
     display: flex;
     justify-content: space-between;
-    padding: 30px 8%;
 }
 
 .contactsListContainer{
@@ -52,3 +28,31 @@
     width: 50px;
     height: 50px;
 }
+
+.addButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(132, 85, 246);
+    color: white;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 8px 16px;
+
+    cursor: pointer;
+
+    &:hover, &:focus{
+        background-color: rgb(110, 58, 232);
+    }
+
+    & span{
+        display: block;
+        margin-top: -3px;
+        margin-right: 4px;
+    }
+}
+
+.title{
+    color: rgb(132, 85, 246);
+}
+

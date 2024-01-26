@@ -33,21 +33,24 @@ export const Layout = () =>{
     
     return (
         <>
-            <nav>
-                <ul className={css.navList}>
-                    <li className={css.navButton}><NavLink  to='/'>Contacts<span className={css.logoSpan}>UI</span></NavLink></li>
-                    {isAuth && <li className={`${css.navButton} ${isOnContactsPage && css.isActive}`}><NavLink to='/contacts'>Contacts</NavLink></li> }
-                </ul>
-                <div>
-                    {profile && <Profile profile={profile} logout={handleLogout}/>
-                    }
-                </div>
-                {!profile && <ul className={css.authList}>
-                    <li className={css.navButton}><NavLink  to='/login'>Log In</NavLink></li>
-                    <li className={css.navButton}><NavLink to='/register'>Sign In</NavLink></li> 
-                </ul>}    
+            <nav className={css.content}>
+                <div className={css.navWrap}>
+                    <ul className={css.navList}>
+                        <li ><NavLink className={css.navButton} to='/'>Contacts<span className={css.logoSpan}>UI</span></NavLink></li>
+                        {isAuth && <li ><NavLink className={`${css.navButton} ${isOnContactsPage && css.isActive}`} to='/contacts'>Contacts</NavLink></li> }
+                    </ul>
+                    <div>
+                        {profile && <Profile profile={profile} logout={handleLogout}/>
+                        }
+                    </div>
+                    {!profile &&
+                    <ul className={css.authList}>
+                        <li><NavLink className={css.navButton}  to='/login'>Log In</NavLink></li>
+                        <li><NavLink className={css.navButton} to='/register'>Sign In</NavLink></li> 
+                    </ul>}
+                </div>    
             </nav>
-            <main>
+            <main className={css.content}>
                 <Suspense fallback={<div></div>}>
                     <Outlet/>
                 </Suspense>

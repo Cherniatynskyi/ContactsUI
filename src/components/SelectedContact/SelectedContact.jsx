@@ -2,6 +2,7 @@ import css from './SelectedContacts.module.css'
 import { useSelector } from 'react-redux'
 import { ContactModal } from 'components/ContactModals/ContactModal'
 import { ConfirmDeleteModal } from 'components/ContactModals/ConfirmDeleteModal'
+import svgImg from '../../images/contacts-img.svg'
 
 export const SelectedContact = ({openConfirmModal, openEditModal, closeConfirmModal, closeEditModal, editmodalIsOpen, confirmModalIsOpen}) =>{
     
@@ -15,6 +16,7 @@ export const SelectedContact = ({openConfirmModal, openEditModal, closeConfirmMo
 
 
     return(
+        <>
         <div className={css.selectedContainer}>
                 <div className={css.profileImg}>{name[0].toUpperCase()}</div>
                 <ul className={css.infoList}>
@@ -34,6 +36,9 @@ export const SelectedContact = ({openConfirmModal, openEditModal, closeConfirmMo
                 </div>
                 {editmodalIsOpen && <ContactModal onClose={closeEditModal} id={id}/>}
                 {confirmModalIsOpen && <ConfirmDeleteModal name={name} onClose={closeConfirmModal} id={id}/>}
+                <img className={css.svgImg} src={svgImg} alt="" /> 
             </div>
+             
+        </>
     )
 }

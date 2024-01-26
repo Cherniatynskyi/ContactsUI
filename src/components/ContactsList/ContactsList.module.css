@@ -17,11 +17,12 @@
     align-items: center;
     justify-content: space-between;
 
-    height: 70px;
+    height: 90px;
     padding: 0 20px;
 
-    border-radius: 10px;
-    border: 0.5px solid rgba(137, 137, 137, 0.43);
+    border-radius: 4px;
+    background-color: rgb(246, 246, 246);
+    border: none;
 
     cursor: pointer;
 
@@ -29,29 +30,70 @@
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 
-    & p{
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-    }
 
-    & span{
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
+}
 
-    & div{
-        display: flex;
+.infoWrap{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-left: 10%;
+    gap: 10px;
+}
+
+
+
+.profileWrap{
+    display: flex;
         align-items: center;
         justify-content: center;
-        background-color: blue;
+        background-color: inherit;
         border-radius: 50%;
         color: white;
         width: 40px;
         height: 40px;
+
+        & svg{
+            fill: black;
+        }
+}
+
+
+
+.userName{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+}
+
+.userNumber{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    & svg{
+        width: 20px;
     }
 }
 
@@ -59,7 +101,6 @@
     display: inline-flex;
     padding: 5px 10px;
     border: none;
-    color: white;
 
     border-radius: 5px;
 
@@ -68,19 +109,27 @@
     cursor: pointer;
 
     font-size: 12px;
+    background-color: inherit;
 
     &:hover{
-        background-color: rgb(198, 16, 3);
 
         svg{
-            fill: white;
+            fill: rgb(255, 74, 74);
         }
     }
 }
 
 .active{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border: 2px solid rgb(114, 146, 252);
+    box-shadow: none;
+    border: none;
     outline: none;
+
+    background-color: rgb(132, 85, 246);
+    color: white;
+    fill: white;
+
+    svg{
+        fill: white;
+    }
 
 }

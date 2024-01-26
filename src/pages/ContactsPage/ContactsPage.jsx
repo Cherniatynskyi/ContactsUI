@@ -10,6 +10,7 @@ import getRandomColor from "../../utils/randomColor"
 import { TailSpin } from 'react-loader-spinner'
 import css from './ContactsPage.module.css'
 
+
 export const ContactsPage = () =>{
     const [AddmodalIsOpen, setAddModalIsOpen] = useState(false)
     
@@ -60,25 +61,25 @@ export const ContactsPage = () =>{
     }
 
     return (
-         <>
+        <div className={css.contacts}>
           <div className={css.header}>
-            <div className={css.addButton} onClick={openAddModal}><span>+</span>New Contact</div>
-            <h2>All Contacts: {stateContacts.length}</h2>
-            <div className={css.loader}>{isLoading && <TailSpin visible={true} height="50" width="50" color="#4545E1 " ariaLabel="tail-spin-loading" radius="1" wrapperStyle={{}} wrapperClass="" />}</div>
+            <Filter/>
+            <div className={css.addButton} onClick={openAddModal}><span></span>Add Contact</div>
+            
           </div>
           {AddmodalIsOpen && <ContactModal onClose={closeAddModal} contentType="add"/>}
           <div className={css.contactsMainPage}>
-            {stateContacts[0] && <SelectedContact
-                openEditModal={openEditModal} openConfirmModal={openConfirmModal}
-                closeEditModal={closeEditModal} closeConfirmModal={closeConfirmModal}
-                editmodalIsOpen={editmodalIsOpen} confirmModalIsOpen={confirmModalIsOpen}
-            />}
-            <div className={css.contactsListContainer}>
-              <Filter/>
-              {stateContacts?.length > 0 ? <ContactsList colors={colors} openConfirmModal={openConfirmModal} closeConfirmModal={closeConfirmModal}/> : <h3>You have no contacts in your list yet</h3>}
-            </div>
-            
+              <div className={css.contactsListContainer}>
+              <div className={css.loader}>{isLoading && <TailSpin visible={true} height="50" width="50" color="rgb(132, 85, 246)" ariaLabel="tail-spin-loading" radius="2" wrapperStyle={{}} wrapperClass="" />}</div>
+              <h2 className={css.title}>All Contacts: {stateContacts.length}</h2>
+                {stateContacts?.length > 0 ? <ContactsList colors={colors} openConfirmModal={openConfirmModal} closeConfirmModal={closeConfirmModal}/> : <h3>You have no contacts in your list yet</h3>}
+              </div> 
+              {stateContacts[0] && <SelectedContact
+                  openEditModal={openEditModal} openConfirmModal={openConfirmModal}
+                  closeEditModal={closeEditModal} closeConfirmModal={closeConfirmModal}
+                  editmodalIsOpen={editmodalIsOpen} confirmModalIsOpen={confirmModalIsOpen}
+              />} 
           </div>
-            </> 
+        </div> 
     )
 }

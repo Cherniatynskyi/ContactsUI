@@ -12,8 +12,10 @@ export const Filter = () => {
         dispatch(setFilter(e.currentTarget.value))
       }
 
-    return (<label className={css.filterLabel}>
-        <CiSearch size="1.5em" fill="rgb(77, 77, 77)"/>
+    return (
+    <label className={css.filterLabel}>
+        
         <input className={css.filterInput} type="text" value={stateFilter} onChange={changeFilter} />
+        <button className={css.searchButton}>Search <CiSearch size="1.5em" fill="white"/></button>
     </label>)
 }
