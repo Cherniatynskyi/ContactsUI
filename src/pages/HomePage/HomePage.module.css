@@ -4,6 +4,18 @@
     justify-content: center;
     align-items: center;
     padding: 80px;
+
+    @media (max-width: 1250px) {
+        padding: 60px;
+       }
+
+       @media (max-width: 720px) {
+        padding: 40px;
+       }
+
+       @media (max-width: 550px) {
+        padding: 20px;
+       }
 }
 
 .heroContent{
@@ -12,10 +24,15 @@
     justify-content: center;
     align-items: center;
 
+    @media (max-width: 500px) {
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 90px;
+       }
+
 }
 
 .heroButton{
-
     color: white;
     text-decoration: none;
     font-size: 24px;
@@ -29,6 +46,11 @@
     &:hover{
         background-color: rgb(110, 58, 232);
     }
+
+    @media (max-width: 880px) {
+        font-size: 18px;
+        margin-top: 40px;
+       }
 }
 
 .heroImg{
@@ -37,10 +59,43 @@
     top: 15%;
     left: 60%;
     z-index: -1;
+
+    @media (max-width: 1250px) {
+       width: 300px;
+      }
+
+    @media (max-width: 880px) {
+        width: 250px;
+    }
+
+    @media (max-width: 720px) {
+        width: 200px;
+    }
+
+    @media (max-width: 500px) {
+        width: 180px;
+    }
 }
 
 .heroTitle{
     max-width: 700px;
     font-size: 70px;
     margin: 0;
+
+    @media (max-width: 1250px) {
+        font-size: 60px;
+       }
+
+    @media (max-width: 880px) {
+        font-size: 50px;
+       }
+
+    @media (max-width: 720px) {
+        font-size: 40px;
+        text-align: center;
+       }
+
+    @media (max-width: 400px) {
+        font-size: 30px;
+    }
 }

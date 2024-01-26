@@ -16,6 +16,11 @@
     &:hover, &:focus{
         background-color: rgb(110, 58, 232);
     }
+
+    @media (max-width: 550px) {
+        font-size: 16px;
+        padding: 14px;
+    }
 }
 
 .profileContainer{
@@ -38,6 +43,7 @@
         border-bottom: solid grey 0.5px;
         padding-bottom: 5px;
     }
+
 }
 
 .profileWrap{

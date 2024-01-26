@@ -22,6 +22,8 @@
     gap: 20px;
 
     list-style: none;
+
+    
 }
 
 .authList{
@@ -29,6 +31,9 @@
     gap: 20px;
 
     list-style: none;
+    @media (max-width: 550px) {
+        gap: 10px;
+    }
 }
 
 .navButton{
@@ -51,6 +56,14 @@
 
         & span{
             color: rgb(132, 85, 246);
+        }
+
+        @media (max-width: 880px) {
+            font-size: 20px;
+           }
+
+        @media (max-width: 550px) {
+            font-size: 15px;
         }
 }
 
