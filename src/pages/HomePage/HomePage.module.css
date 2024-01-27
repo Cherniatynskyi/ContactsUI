@@ -68,29 +68,30 @@
     
 }
 
-@media screen and (max-width: 1250px) {
+@media only screen and (max-width: 1250px) {
     .heroImg{
         width: 300px;
     } 
 }
 
- @media screen and (max-width: 880px) {
+ @media only screen and (max-width: 880px) {
     .heroImg{
         width: 250px;
     } 
  }
 
- @media screen and (max-width: 720px) {
+ @media only screen and (max-width: 720px) {
     .heroImg{
         width: 200px;
     } 
  }
 
- @media screen and (max-width: 500px) {
+ @media only screen and (max-width: 500px) {
     .heroImg{
         width: 180px;
     } 
  }
+
 
 .heroTitle{
     max-width: 700px;
