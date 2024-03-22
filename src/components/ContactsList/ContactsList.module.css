@@ -10,12 +10,20 @@
     justify-content: center;
     padding: 0;
     margin: 0;
+
+    list-style: none;
+}
+
+.listItemWrap{
+    cursor: pointer;
 }
 
 .listItem{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-decoration: none;
+    color: black;
 
     height: 90px;
     padding: 0 20px;
@@ -46,8 +54,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    margin-left: 10%;
+    margin-left: 3%;
     gap: 10px;
 }
 
@@ -82,9 +89,6 @@
     align-items: center;
     gap: 16px;
 
-    @media (max-width: 1200px) {
-        font-size: 18px;
-    }
 
 }
 
@@ -102,9 +106,6 @@
         width: 20px;
     }
 
-    @media (max-width: 1200px) {
-        font-size: 12px;
-    }
 }
 
 .contactsButton{
@@ -143,3 +144,41 @@
     }
 
 }
+
+.detailsLink{
+    display: none;
+    margin-left: auto;
+    margin-right: 10px;
+    color: white;
+    background-color: rgb(132, 85, 246);
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 1020px) {
+    .detailsLink{
+        display: block;
+
+    }
+    
+}
+
+@media only screen and (max-width: 700px) {
+    .profileWrap{
+        display: none;
+    }
+    
+    .listItem{
+        padding: 0 10px;
+    }
+
+    .userName{
+        font-size: 20px;
+    }
+
+    .userNumber{
+        font-size: 14px;
+    }
+}
+

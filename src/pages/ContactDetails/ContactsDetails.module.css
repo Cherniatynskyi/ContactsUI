@@ -1,0 +1,154 @@
+.detailsPage{
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgb(248, 242, 255);
+}
+
+.detailsMainInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detailsName{
+    margin: 0;
+    font-size: 46px;
+}
+
+.allInfo{
+    margin-top: 60px;
+}
+
+.detailsJob{
+    margin: 0;
+    font-size: 30px;
+    font-weight: 300;
+    color: rgb(103, 103, 103);
+}
+
+.allInfoTitle{
+    margin: 0;
+    font-size: 30px;
+}
+
+.detailsList{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 26px;
+}
+
+.detailsThumb{
+    display: flex;
+    align-items: center;
+    width: 100px;
+    color: rgb(125, 87, 237);
+}
+
+.detailsItem{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.infoListLink{
+        text-decoration: none;
+        color: inherit;
+    
+}
+
+.infoListItem:active{
+    color: rgb(125, 87, 237);
+}
+
+.detailsButtonContainer{
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    margin: 0;
+    margin-top: 30px;
+    
+    justify-content: center;
+}
+
+.detailsButton{
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(125, 87, 237);
+    color: white;
+    font-size: 20px;
+
+    width: 150px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.detailsButton:active{
+    background-color: rgb(92, 60, 173);
+}
+
+@media only screen and (max-width: 650px) {
+    .detailsName{
+        font-size: 40px;
+    }
+    
+    .allInfo{
+        margin-top: 50px;
+    }
+    
+    .detailsJob{
+        font-size: 26px;
+
+    }
+
+    .allInfoTitle{
+        font-size: 26px;
+    }
+
+    .detailsList{
+        font-size: 22px;
+    }
+
+    .detailsButtonContainer{
+        display: flex;
+        gap: 30px;
+        padding: 30px;
+        margin: 0;
+        margin-top: 20px;
+        
+    }
+
+    .detailsButton{
+        font-size: 16px;
+    }
+
+    .detailsThumb{
+
+        width: 80px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .detailsList{
+        font-size: 18px;
+    }
+
+    .detailsButton{
+        font-size: 14px;
+    }
+
+    .detailsThumb{
+        width: 50px;
+    }
+
+    .detailsItem{
+
+        gap: 20px;
+    }
+}

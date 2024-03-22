@@ -21,7 +21,7 @@ export const ContactsList = ({colors, openConfirmModal, closeConfirmModal}) => {
             <div className={css.contactsContainer}>
                 <ul className={css.contactsList}>
                     {filteredContacts && filteredContacts.map((contact) =>
-                        <ContactItem  key={contact.id} contact={contact} colors = {colors} openConfirmModal={openConfirmModal} closeConfirmModal={closeConfirmModal}/>)}
+                        <ContactItem key={contact._id} contact={contact} colors = {colors} openConfirmModal={openConfirmModal} closeConfirmModal={closeConfirmModal}/>)}
                 </ul>
             </div>
         </>

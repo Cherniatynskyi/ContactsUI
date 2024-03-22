@@ -5,9 +5,10 @@ import { Notify } from 'notiflix';
 import { useDispatch } from 'react-redux';
 import { deleteContactsThunk } from '../../redux/contactsThunk';
 import { clearCurrentContact } from '../../redux/contactsSlice';
+import { useLockBodyScroll } from "@uidotdev/usehooks";
 
 export const ConfirmDeleteModal = ({name, onClose, id}) => {
-
+    useLockBodyScroll();
     const firstRender = useRef(false)
     const dispatch = useDispatch()
 
@@ -29,6 +30,9 @@ export const ConfirmDeleteModal = ({name, onClose, id}) => {
     }
 
     const handleBackdropClick = e => {
+        console.log("TRIGGER")
+        console.log(e.target)
+        console.log(e.currentTarget)
         if (e.target === e.currentTarget) {
             onClose()
         }
@@ -46,8 +50,8 @@ export const ConfirmDeleteModal = ({name, onClose, id}) => {
     }
 
         return (
-            <div className={css.Overlay} onClick={handleBackdropClick}>
-                <div className={css.Modal}>
+            <div className={css.deleteOverlay} onClick={handleBackdropClick}>
+                <div className={css.deleteModal}>
                     <div className={css.confirmContentContainer}>
                         <p>Are you sure you want to delete <b>{name}</b> from your contact book?</p>
                         <div className={css.buttonsContainer}>

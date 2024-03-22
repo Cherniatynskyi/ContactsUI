@@ -5,8 +5,8 @@ export const getContacts = async() =>{
     return data
  }
 
-export const addContact = async ({name, number}) => {
-    return await instance.post('/contacts', {name, number}) 
+export const addContact = async (data) => {
+    return await instance.post('/contacts', data) 
 }
 
 export const deleteContact = async (id) => {
@@ -14,6 +14,8 @@ export const deleteContact = async (id) => {
 }
 
 export const updateContact = async(id, data)=>{
-   return await instance.patch(`/contacts/${id}`, data)
+    console.log(id)
+    console.log(data)
+   return await instance.put(`/contacts/${id}`, data)
 }
 

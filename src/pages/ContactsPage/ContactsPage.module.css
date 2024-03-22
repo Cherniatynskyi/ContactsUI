@@ -44,6 +44,7 @@
     padding: 8px 16px;
 
     cursor: pointer;
+    text-decoration: none;
 
     &:hover, &:focus{
         background-color: rgb(110, 58, 232);
@@ -58,5 +59,48 @@
 
 .title{
     color: rgb(132, 85, 246);
+}
+
+@media only screen and (max-width: 1020px) {
+    .contactsListContainer{
+        width: 100%;
+        padding-right: 20%;
+    }
+
+    .contacts{
+        background-image: url('../../images/5.png');
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position-x: 140%;
+    background-position-y: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+    .contacts{
+        background-image: none;
+        padding: 0;
+    }
+
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: baseline;
+        gap: 20px;
+    }
+
+    .contactsListContainer{
+        width: 100%;
+        padding: 0 0 20px 0;
+    }
+
+    .addButton{
+        font-size: 16px;
+    padding: 10px 12px;
+    }
+
+    
 }
 

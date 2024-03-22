@@ -19,14 +19,14 @@ const handleFulfilledAdd = (state, action) => {
 
 const handleFulfilledDel = (state,{payload}) => {
     state.isLoading = false
-    state.contacts = state.contacts.filter(el=>el.id!==payload?.id)
+    state.contacts = state.contacts.filter(el=>el._id!==payload?._id)
     state.error = ''
 }
 
 const handleFulfilledUpdate = (state,{payload}) => {
     state.isLoading = false
     state.contacts = state.contacts.map(contact => {
-        if(contact.id === payload.id){
+        if(contact._id === payload._id){
             return payload
         }
         return contact
@@ -34,10 +34,9 @@ const handleFulfilledUpdate = (state,{payload}) => {
     state.error = ''
 }
 
-const handleRejected = (state,{payload}) => {
-    state.error = payload
+const handleRejected = (state, {error}) => {
+    state.error = error.message
     state.isLoading = false
-    console.log('error')
 }
 
 export const contactsSlice = createSlice({
@@ -46,17 +45,17 @@ export const contactsSlice = createSlice({
         contacts:[],
         isLoading: false,
         error: '',
-        currentContactId: null
+        currentContact: null
     },
     reducers:{
         clearContacts(state){
             state.contacts = []
         },
-        setCurrentContactId(state, {payload}){
-            state.currentContactId = payload
+        setCurrentContact(state, {payload}){
+            state.currentContact = payload
         },
         clearCurrentContact(state){
-            state.currentContactId = null
+            state.currentContact = null
         }
     },
     extraReducers:(builder)=>{
@@ -70,4 +69,4 @@ export const contactsSlice = createSlice({
     }
 })
 
-export const {clearContacts, setCurrentContactId, clearCurrentContact} = contactsSlice.actions
+export const {clearContacts, setCurrentContact, clearCurrentContact} = contactsSlice.actions

@@ -1,6 +1,5 @@
 import { Filter } from "components/Filter/Filter"
 import { SelectedContact } from "components/SelectedContact/SelectedContact"
-import { ContactModal } from "../../components/ContactModals/ContactModal"
 import { ContactsList } from "components/ContactsList/ContactsList"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
@@ -9,10 +8,10 @@ import { getContactsThunk } from "../../redux/contactsThunk"
 import getRandomColor from "../../utils/randomColor"
 import { TailSpin } from 'react-loader-spinner'
 import css from './ContactsPage.module.css'
+import { Link } from "react-router-dom"
 
 
 export const ContactsPage = () =>{
-    const [AddmodalIsOpen, setAddModalIsOpen] = useState(false)
     
     const stateContacts = useSelector(state => state.contacts.contacts)
     const isLoading = useSelector(state => state.contacts.isLoading)
@@ -35,16 +34,10 @@ export const ContactsPage = () =>{
       }  
     }, [dispatch, isRefreshed])
 
-    const openAddModal = () =>{
-      setAddModalIsOpen(true)
-    }
-
-    const closeAddModal = () => {
-      setAddModalIsOpen(false)
-   }
 
    const openEditModal = ()=>{
     setEditModalIsOpen(true)
+
     }
 
     const closeEditModal = ()=>{
@@ -64,10 +57,8 @@ export const ContactsPage = () =>{
         <div className={css.contacts}>
           <div className={css.header}>
             <Filter/>
-            <div className={css.addButton} onClick={openAddModal}><span></span>Add Contact</div>
-            
+            <Link className={css.addButton} to="/contacts/add" ><span></span>Add Contact</Link>
           </div>
-          {AddmodalIsOpen && <ContactModal onClose={closeAddModal} contentType="add"/>}
           <div className={css.contactsMainPage}>
               <div className={css.contactsListContainer}>
               <div className={css.loader}>{isLoading && <TailSpin visible={true} height="50" width="50" color="rgb(132, 85, 246)" ariaLabel="tail-spin-loading" radius="2" wrapperStyle={{}} wrapperClass="" />}</div>

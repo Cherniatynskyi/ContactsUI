@@ -20,7 +20,6 @@ export const Layout = () =>{
     useEffect(() => {
       if(isAuth){
         dispatch(getProfileThunk())
-        console.log(location)
       }
     }, [dispatch, isAuth, location])
 

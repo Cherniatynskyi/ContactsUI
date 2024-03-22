@@ -7,6 +7,7 @@ export const Filter = () => {
 
     const stateFilter = useSelector(state => state.filter.filter)
     const dispatch = useDispatch();
+    const isMobileDimension = (window.innerWidth < 1020)
 
     const changeFilter = e => {
         dispatch(setFilter(e.currentTarget.value))
@@ -16,6 +17,6 @@ export const Filter = () => {
     <label className={css.filterLabel}>
         
         <input className={css.filterInput} type="text" value={stateFilter} onChange={changeFilter} />
-        <button className={css.searchButton}>Search <CiSearch size="1.5em" fill="white"/></button>
+        <button className={css.searchButton}>{isMobileDimension ?  <CiSearch size="1.5em" fill="white"/> : 'search'}</button>
     </label>)
 }

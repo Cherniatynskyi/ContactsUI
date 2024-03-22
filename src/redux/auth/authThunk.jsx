@@ -11,7 +11,7 @@ export const getProfileThunk = createAsyncThunk('auth/profile', async()=>{
 
 export const fetchCurrentUser = createAsyncThunk('auth/refresh', async(_, thunkAPI)=>{
     const state = thunkAPI.getState()
-    const token = state.auth_token.access_token
+    const token = `Bearer ${state.auth_token.access_token}`
     if(!token){
         return
     }

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const instance = axios.create({baseURL: 'https://connections-api.herokuapp.com'})
+export const instance = axios.create({baseURL: 'http://localhost:3003/api'})
 
 export const setToken = (token) =>{
     instance.defaults.headers.common['Authorization'] = token
@@ -11,7 +11,7 @@ export const deleteToken = ()=>{
 }
 
 export const signUp = (body) =>{
-   return instance.post('/users/signup', body)
+   return instance.post('/users/register', body)
 }
 
 export const logIn = async(body) =>{
@@ -27,6 +27,6 @@ export const logIn = async(body) =>{
  }
 
  export const getProfile = async() =>{
-    const {data} = await instance('/users/current')
+    const {data} = await instance.get('/users/current')
     return data
  }

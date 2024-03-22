@@ -40,3 +40,20 @@
        background-color: rgb(110, 58, 232)
     }
 }
+
+@media only screen and (max-width: 1020px){
+    .filterLabel{
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .filterLabel{
+        width: 100%;
+    }
+
+    .searchButton{
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}

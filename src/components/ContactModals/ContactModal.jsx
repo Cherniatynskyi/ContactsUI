@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import css from './AddContactModal.module.css'
-import { AddContactForm } from 'components/ContactForm/AddContactForm'
 import { IoMdClose } from "react-icons/io";
 import { EditContactForm } from 'components/ContactForm/EditContactForm';
 
@@ -9,6 +8,7 @@ export const ContactModal = ({ onClose, contentType= "edit", id}) => {
     const firstRender = useRef(false)
 
     useEffect(() => {
+      
       if(firstRender.current === true){
         window.addEventListener('keydown', handleKeyDown)
       }
@@ -38,8 +38,8 @@ export const ContactModal = ({ onClose, contentType= "edit", id}) => {
         return (
             <div className={css.Overlay} onClick={handleBackdropClick}>
                 <div className={css.Modal}>
-                {contentType === 'add' ? <AddContactForm closeModal={onClose}/> : <EditContactForm onClose={onClose} id={id}/>}
-                <button onClick={handleButtonClose} className={css.closeButton}><IoMdClose className={css.closeIcon} fill="grey" size="1.75em"/></button>
+                  <EditContactForm onClose={onClose} id={id}/>
+                  <button onClick={handleButtonClose} className={css.closeButton}><IoMdClose className={css.closeIcon} fill="grey" size="2em"/></button>
                 </div>
             </div>
         )

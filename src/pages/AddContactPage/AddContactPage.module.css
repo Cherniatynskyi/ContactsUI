@@ -1,0 +1,14 @@
+.backButton{
+    font-size: 20px;
+    display: flex;
+    float: right;
+    text-decoration: none;
+    color: black;
+    gap: 10px;
+    align-items: center;
+    transition: 200ms linear;
+}
+
+.backButton:hover{
+    color: blueviolet;
+}

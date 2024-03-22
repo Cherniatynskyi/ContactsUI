@@ -12,10 +12,12 @@ export const addContactsThunk = createAsyncThunk('contacts/addContact', async(da
 
 export const deleteContactsThunk = createAsyncThunk('contacts/deleteContact', async(id)=>{
     const contacts = await deleteContact(id);
+    console.log(contacts)
     return contacts.data
 })
 
-export const updateContactThunk = createAsyncThunk('contacts/updateContact', async({id, name, number})=>{
-    const contacts = await updateContact(id, {name, number})
+export const updateContactThunk = createAsyncThunk('contacts/updateContact', async({_id, formData})=>{
+    const contacts = await updateContact(_id, formData)
+    console.log(contacts, "DATA")
     return contacts.data
 })
